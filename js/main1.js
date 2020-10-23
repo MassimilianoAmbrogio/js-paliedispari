@@ -14,54 +14,41 @@
 // Dichiaro le variabili
 
 //  Domande all'utente
-var pariDispari = prompt('Inserisci pari o dispari');
-var utente = parseInt(prompt('Inserisci un numero da 1 a 5'));
-console.log(utente);
+var scelteGiocatore = prompt('Inserisci pari o dispari').toLowerCase().trim();
+console.log('Scelta giocatore:', scelteGiocatore);
 
-var computer = Computer(1, 5);
-console.log(computer);
+var numeroGiocatore= parseInt(prompt('Inserisci un numero da 1 a 5').trim());
+console.log('Numero giocatore:', numeroGiocatore);
 
-/**
- * Generazione numero random con range
- * @param {} min 
- * @param {*} max 
- */
-
-function Computer(min, max) {
-    var computerRand = Math.floor(Math.random() * (max - min + 1)) + min;
-    
-    return computerRand;
-}
+// Opponente
+var numeroOpponente = getRandomNumber(1, 5);
+console.log('Numero opponente:', numeroOpponente);
 
 // Somma il valore dei due numeri passati
-var res = utente + computer;
-console.log('Risultato:', res);
+var somma = numeroGiocatore + numeroOpponente;
+console.log('Somma', somma);
 
-// Stabilire se il risultato è pari o dispari
-var res = somma(utente + computer);
+// Controllo
+var risultato = checkPariDispari(somma);
 
-if (res === 'pari') {
-    console.log('La somma dei due numeri è pari');
-} else {
-    console.log('La somma dei due numeri è dispari');
+// Vincitore 
+if (scelteGiocatore === 'risultato') {
+    console.log('Vince computer');
+}
+else {
+    console.log('Vince utente');
+} 
+
+// Genera numeri random con range
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//definizione
-function somma(numero) {
-    if (numero % 2 == 0) {
+// Controllo natura pari o dispari di un numero
+function checkPariDispari(num) {
+    if (num % 2 === 0) {
         return 'pari';
     }
 
     return 'dispari';
 }
-
-// Vincitore 
-if (pariDispari != 'pari') {
-    console.log('Vince computer');
-}
-else if (pariDispari == 'pari') {
-    console.log('Vince utente');
-} 
-
-
-

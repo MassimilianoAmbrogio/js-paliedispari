@@ -7,26 +7,33 @@
 
 // Dichiaro le variabili
 
-// Domanda all'utente
-var parola = prompt('Inserisci una parola');
-console.log('PAROLA: ', parola);
+// Ottenere parola da utente
+var parola = prompt('Inserisci una parola').toLowerCase.trim();
+console.log(parola);
 
-// Invocazione
+// Invertire caratteri parola
 var parolaInvertita = invertiCaratteri(parola);
-console.log('REVERSE: ', parolaInvertita);
+console.log(parolaInvertita);
 
-// Definizione funzione per invertire i caratteri della stringa
+// Comparazione 
+if (parola === parolaInvertita) {
+    console.log('Palindroma');
+} else {
+    console.log('NON Palindroma');
+}
+
+// Invertire caratteri stringa
 function invertiCaratteri(word) {
 
 // Include il metodo sotto
-    var reverse = word.split('').reverse().join('');
+    //var reverse = word.split('').reverse().join('');
 
-    //  var reverse = '';
+      var result = '';
 
-    //  for (var i = word.length - 1; i >= 0; i--) {
-    //     reverse += word[i];
-    //  }
+      for (var i = word.length - 1; i >= 0; i--) {
+         result += word[i];
+      }
     
 // Restituiamo un valore con return...
-    return reverse;
+    return result;
 }
