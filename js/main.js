@@ -8,7 +8,7 @@
 // Dichiaro le variabili
 
 // Ottenere parola da utente
-var parola = prompt('Inserisci una parola').toLowerCase.trim();
+var parola = prompt('Inserisci una parola').toLowerCase().trim();
 console.log(parola);
 
 // Invertire caratteri parola

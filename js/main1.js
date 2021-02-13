@@ -32,11 +32,11 @@ console.log('Somma', somma);
 var risultato = checkPariDispari(somma);
 
 // Vincitore 
-if (scelteGiocatore === 'risultato') {
-    console.log('Vince computer');
+if (scelteGiocatore === risultato) {
+    console.log('Vince il giocatore');
 }
 else {
-    console.log('Vince utente');
+    console.log('Vince l\'opponente');
 } 
 
 // Genera numeri random con range
